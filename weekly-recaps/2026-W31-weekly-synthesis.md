@@ -38,7 +38,7 @@ This week's architectural consensus introduces the **4-Tier Risk Classification 
 - **New Specifications Released**: 2
 - **Core Pillars Active**: Pillar 01 (Identity) & Pillar 02 (Action Boundaries)
 - **Infographic Published**: [4-Tier Risk Model Graphic](../pillars/02-policy-and-action-boundaries/assets/2026-07-28-boundary-infographic.png)
-- **Social Captions Published**: [July 28 Social Release](../social-captions/2026-07-28-captions.md)
+- **Social Captions Published**: [July 28 Social Release (Published)](../social-captions/2026-07-28-captions.md) ✅
 
 ---
 

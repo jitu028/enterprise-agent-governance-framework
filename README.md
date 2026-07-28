@@ -27,34 +27,34 @@ The **Enterprise Agent Governance Framework (EAGF)** provides a standardized tax
 
 ```mermaid
 graph TD
-    subgraph Client / Trigger
-        User([Human / System Trigger])
+    subgraph Client_Trigger ["Client / Trigger"]
+        User(["Human / System Trigger"])
     end
 
-    subgraph Pillar 1: Identity & NHA
-        Auth[OAuth2 / RFC 8693 Token Exchange]
-        NHA[NHA Cryptographic Identity / SPIFFE]
+    subgraph Pillar_1 ["Pillar 1: Identity & NHA"]
+        Auth["OAuth2 / RFC 8693 Token Exchange"]
+        NHA["NHA Cryptographic Identity / SPIFFE"]
     end
 
-    subgraph Pillar 3: Governed Execution Gateway
-        GW[Agent API Gateway / Sidecar]
-        Guard[Prompt Injection & Egress Guardrails]
+    subgraph Pillar_3 ["Pillar 3: Governed Execution Gateway"]
+        GW["Agent API Gateway / Sidecar"]
+        Guard["Prompt Injection & Egress Guardrails"]
     end
 
-    subgraph Pillar 2: Policy & Action Boundaries
-        OPA{OPA / Rego Engine}
-        HITL[Human-in-the-Loop Gate]
-        Risk[4-Tier Risk Evaluator]
+    subgraph Pillar_2 ["Pillar 2: Policy & Action Boundaries"]
+        OPA{"OPA / Rego Engine"}
+        HITL["Human-in-the-Loop Gate"]
+        Risk["4-Tier Risk Evaluator"]
     end
 
-    subgraph Pillar 4 & 5: Data, RAG & Lineage
-        RAG[(Governed Vector DB / RAG)]
-        OTel[OTel Agent Tracing & Audit Log]
+    subgraph Pillar_4_5 ["Pillar 4 & 5: Data, RAG & Lineage"]
+        RAG[("Governed Vector DB / RAG")]
+        OTel["OTel Agent Tracing & Audit Log"]
     end
 
-    subgraph Pillar 6: Execution Environment
-        Agent[Autonomous Agent / Multi-Agent Mesh]
-        Tools[Sandboxed Tool Execution]
+    subgraph Pillar_6 ["Pillar 6: Execution Environment"]
+        Agent["Autonomous Agent / Multi-Agent Mesh"]
+        Tools["Sandboxed Tool Execution"]
     end
 
     User --> Auth

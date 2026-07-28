@@ -20,20 +20,20 @@ Pillar 03 defines requirements for:
 
 ```mermaid
 graph TD
-    Agent[Agent Execution Loop] -->|Tool Call Request| GW[Governed Gateway / Sidecar]
+    Agent["Agent Execution Loop"] -->|Tool Call Request| GW["Governed Gateway / Sidecar"]
     
-    subgraph Gateway Inspection Engine
-        GW --> InjectionCheck[Prompt Injection & Payload Sanitizer]
-        InjectionCheck --> DLPCheck[Egress DLP & PII Scrubber]
-        DLPCheck --> RateLimit[Rate Limit & Cost Circuit Breaker]
+    subgraph Gateway_Inspection_Engine ["Gateway Inspection Engine"]
+        GW --> InjectionCheck["Prompt Injection & Payload Sanitizer"]
+        InjectionCheck --> DLPCheck["Egress DLP & PII Scrubber"]
+        DLPCheck --> RateLimit["Rate Limit & Cost Circuit Breaker"]
     end
 
-    RateLimit -->|Verified Request| Sandbox{Target Tool Type}
+    RateLimit -->|Verified Request| Sandbox{"Target Tool Type"}
     
-    Sandbox -- "API / REST" --> ExtAPI[External Enterprise API]
-    Sandbox -- "Code / Bash" --> Wasm[gVisor / Wasm Sandbox]
+    Sandbox -- "API / REST" --> ExtAPI["External Enterprise API"]
+    Sandbox -- "Code / Bash" --> Wasm["gVisor / Wasm Sandbox"]
     
-    ExtAPI --> OutputSanitizer[Output Sanitizer / Indirect Injection Guard]
+    ExtAPI --> OutputSanitizer["Output Sanitizer / Indirect Injection Guard"]
     Wasm --> OutputSanitizer
     OutputSanitizer -->|Safe Filtered Result| Agent
 ```

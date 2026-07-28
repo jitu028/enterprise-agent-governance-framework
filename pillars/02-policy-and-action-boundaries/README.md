@@ -72,4 +72,4 @@ graph LR
 
 - [4-Tier Risk Classification Framework](2026-07-28-4-tier-risk-classification.md)
 - [Boundary Architecture Infographic](assets/2026-07-28-boundary-infographic.png)
-- [Action Boundary Evaluation Animation](assets/2026-07-28-boundary-animation.mp4)
+- [🎥 Watch Action Boundary Evaluation Video Animation](https://github.com/jitu028/enterprise-agent-governance-framework/releases/download/media-assets/2026-07-28-boundary-animation.mp4)

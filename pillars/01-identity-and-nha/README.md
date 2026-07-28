@@ -56,4 +56,4 @@ sequenceDiagram
 
 - [RFC 8693 Token Exchange Deep Dive](2026-07-27-token-exchange-rfc8693.md)
 - [NHA Identity Infographic](assets/2026-07-27-nha-infographic.png)
-- [NHA Identity Flow Animation](assets/2026-07-27-nha-animation.mp4)
+- [🎥 Watch NHA Identity Flow Video Animation](https://github.com/jitu028/enterprise-agent-governance-framework/releases/download/media-assets/2026-07-27-nha-animation.mp4)

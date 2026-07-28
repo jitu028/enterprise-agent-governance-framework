@@ -20,22 +20,22 @@ Pillar 06 specifies:
 
 ```mermaid
 graph LR
-    Dev[Developer Commit / Prompt Change] --> PR[Pull Request]
-    PR --> EvalPipeline[CI/CD Eval Flywheel]
+    Dev["Developer Commit / Prompt Change"] --> PR["Pull Request"]
+    PR --> EvalPipeline["CI/CD Eval Flywheel"]
     
-    subgraph Evaluation Metrics
-        EvalPipeline --> SafetyScore[Safety & Boundary Compliance]
-        EvalPipeline --> ToolAcc[Tool Calling Accuracy]
-        EvalPipeline --> CostLatency[Cost & Latency Benchmark]
+    subgraph Evaluation_Metrics ["Evaluation Metrics"]
+        EvalPipeline --> SafetyScore["Safety & Boundary Compliance"]
+        EvalPipeline --> ToolAcc["Tool Calling Accuracy"]
+        EvalPipeline --> CostLatency["Cost & Latency Benchmark"]
     end
 
-    SafetyScore --> Gate{Score > Threshold?}
+    SafetyScore --> Gate{"Score > Threshold?"}
     ToolAcc --> Gate
     CostLatency --> Gate
 
-    Gate -- Yes --> DeployCanary[Canary Deployment 5%]
-    Gate -- No --> RejectPR[Block Merge & Notify Developer]
-    DeployCanary --> ProdMonitor[Production Trajectory Drift Monitor]
+    Gate -- "Yes" --> DeployCanary["Canary Deployment 5%"]
+    Gate -- "No" --> RejectPR["Block Merge & Notify Developer"]
+    DeployCanary --> ProdMonitor["Production Trajectory Drift Monitor"]
 ```
 
 ---

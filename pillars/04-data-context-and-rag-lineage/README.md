@@ -20,19 +20,19 @@ Pillar 04 establishes standards for:
 
 ```mermaid
 graph TD
-    UserToken[User Delegated Token] --> Query[Agent RAG Query]
-    Query --> VectorDB[(Governed Vector Store)]
+    UserToken["User Delegated Token"] --> Query["Agent RAG Query"]
+    Query --> VectorDB[("Governed Vector Store")]
     
-    subgraph Query-Time Metadata Filter
-        VectorDB --> ACLFilter[Filter chunks where ACL contains user_groups]
-        ACLFilter --> Rank[Rerank Chunks]
+    subgraph Query_Time_Metadata_Filter ["Query-Time Metadata Filter"]
+        VectorDB --> ACLFilter["Filter chunks where ACL contains user_groups"]
+        ACLFilter --> Rank["Rerank Chunks"]
     end
 
-    Rank --> CitationEngine[Citation & Lineage Mapper]
-    CitationEngine --> Context[Context Window]
-    Context --> LLM[LLM Response Generation]
+    Rank --> CitationEngine["Citation & Lineage Mapper"]
+    CitationEngine --> Context["Context Window"]
+    Context --> LLM["LLM Response Generation"]
     
-    LLM --> AuditLog[(Lineage Audit Log: Chunk IDs + Doc URIs + User ID)]
+    LLM --> AuditLog[("Lineage Audit Log: Chunk IDs + Doc URIs + User ID")]
 ```
 
 ---

@@ -21,7 +21,7 @@
 
 ```mermaid
 graph TD
-    [Insert Mermaid Architecture Diagram]
+    A["Insert Mermaid Architecture Diagram"]
 ```
 
 ### Key Technical Control Points
